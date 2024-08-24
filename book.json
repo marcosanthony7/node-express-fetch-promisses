@@ -1,7 +1,9 @@
-{
-    "id": 1,
-    "title": "Node.js para Iniciantes",
-    "author": "John Doe",
-    "year": 2020,
-    "available": true
-}
+[
+    {
+        "id": 1,
+        "title": "Node.js para Iniciantes",
+        "author": "John Doe",
+        "year": 2020,
+        "available": true
+    }
+]

@@ -1,4 +1,4 @@
-import express, {json} from 'express';
+import express, { json } from 'express';
 import fetch from 'node-fetch';
 
 const app = express();
@@ -20,6 +20,20 @@ app.get('/posts', (req, res) => {
             message: error
         });
     });
+
+});
+
+app.get('/posts-async', async (req, res) => {
+    try {
+        const resultJson = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const posts = await resultJson.json();
+
+        res.send(posts);
+    } catch (error) {
+        res.send({
+            message: error
+        });
+    }
 
 });
 
