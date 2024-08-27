@@ -1,7 +1,9 @@
 import express from 'express';
 
 const router = express.Router();
-let books = [];
+let books = [
+    { id: 1, title: "Node.js para Iniciantes", author: "John Doe", year: 2020, available: true },
+];
 
 // Listar todos os livros
 router.get('/', (req, res) => {
@@ -30,12 +32,12 @@ router.put('/:id', (req, res) => {
         res.status(404).send('Book not found');
     }
 });
-  
+
 // Deletar um livro
 router.delete('/:id', (req, res) => {
     const { id } = req.params;
     books = books.filter(b => b.id !== parseInt(id));
     res.status(204).send();
 });
-  
+
 export default router;
